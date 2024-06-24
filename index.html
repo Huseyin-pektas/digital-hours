@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Saat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content"> 
+        <div class="container">
+            <div class="clock">
+                <span id="hrs" >00</span>
+                <span >:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hrs = document.querySelector("#hrs");
+        const min = document.querySelector("#min");
+        const sec = document.querySelector("#sec");
+
+       
+
+        setInterval(() => {
+            const current = new Date()
+            hrs.innerHTML = (current.getHours() < 10 ? "0":"")+current.getHours()
+            min.innerHTML = (current.getMinutes() < 10 ? "0":"")+current.getMinutes()
+            sec.innerHTML = (current.getSeconds() < 10 ? "0":"")+current.getSeconds()
+       
+        }, 1000);
+       
+       
+    </script>
+</body>
+</html>
